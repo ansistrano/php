@@ -1,0 +1,11 @@
+---
+- name: Deploy
+  hosts: all
+  vars:
+    ansistrano_deploy_from: "{{ playbook_dir }}/../"
+    ansistrano_deploy_to: "/tmp/var/www/app"
+    ansistrano_after_update_code_tasks_file: "{{ playbook_dir }}/custom-tasks/after-update-code.yml"
+    ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/custom-tasks/after-symlink.yml"
+    ansistrano_keep_releases: 3
+  roles:
+    - { role: ansistrano.deploy }

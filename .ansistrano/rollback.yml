@@ -1,0 +1,8 @@
+---
+- name: Rollback
+  hosts: all
+  vars:
+    ansistrano_deploy_to: "/tmp/var/www/app"
+    ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/.ansistrano/custom-tasks/after-symlink.yml"
+  roles:
+    - { role: ansistrano.rollback }

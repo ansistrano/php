@@ -1,0 +1,27 @@
+{
+    "name": "ansistrano/deploy",
+    "license": "MIT",
+    "type": "composer-plugin",
+    "description": "",
+    "authors": [
+        {
+            "name": "Carlos Buenosvinos",
+            "email": "carlos.buenosvinos@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ansistrano\\": "src/"
+        }
+    },
+    "extra": {
+        "class": "Ansistrano\\Composer\\InstallerPlugin"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "composer-plugin-api": "^1.1"
+    },
+    "require-dev": {
+        "composer/composer": "^1.10"
+    }
+}

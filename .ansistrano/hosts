@@ -1,0 +1,4 @@
+# This is your inventory file
+# You will have to change it to something like:
+# 83.123.23.89 ansible_ssh_user=root
+localhost ansible_connection=local
