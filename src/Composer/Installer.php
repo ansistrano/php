@@ -52,7 +52,7 @@ class Installer extends LibraryInstaller
         $basePath = '/Users/goodwines/Development/rigorguild.com';
         $target = $basePath . '/.ansistrano';
 
-        $this->filesystem->removeDirectory($target);
+        $this->filesystem->removeDirectoryPhp($target);
     }
 
     public function ensureBinariesPresence(PackageInterface $package)
