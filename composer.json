@@ -1,8 +1,8 @@
 {
-    "name": "ansistrano/deploy",
+    "name": "ansistrano/php",
+    "description": "PHP Compose package for facilitate the set-up for deploying PHP applications",
     "license": "MIT",
     "type": "composer-plugin",
-    "description": "",
     "authors": [
         {
             "name": "Carlos Buenosvinos",
@@ -17,7 +17,6 @@
     "extra": {
         "class": "Ansistrano\\Composer\\InstallerPlugin"
     },
-    "minimum-stability": "dev",
     "require": {
         "composer-plugin-api": "^1.1"
     },
