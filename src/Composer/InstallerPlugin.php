@@ -15,8 +15,8 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface, Capa
 {
     public function activate(Composer $composer, IOInterface $io)
     {
-        $installer = new Installer($io, $composer);
-        $composer->getInstallationManager()->addInstaller($installer);
+//        $installer = new Installer($io, $composer);
+//        $composer->getInstallationManager()->addInstaller($installer);
     }
 
     /**
@@ -41,16 +41,7 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface, Capa
     public function onPostPackageInstall(PackageEvent $packageEvent)
     {
         print_r($packageEvent);
-    }
 
-//    public function onPreFileDownload(PreFileDownloadEvent $event)
-//    {
-//        $protocol = parse_url($event->getProcessedUrl(), PHP_URL_SCHEME);
-//
-//        if ($protocol === 's3') {
-//            $awsClient = new AwsClient($this->io, $this->composer->getConfig());
-//            $s3RemoteFilesystem = new S3RemoteFilesystem($this->io, $event->getRemoteFilesystem()->getOptions(), $awsClient);
-//            $event->setRemoteFilesystem($s3RemoteFilesystem);
-//        }
-//    }
+        return $packageEvent;
+    }
 }
