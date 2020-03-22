@@ -40,7 +40,7 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface, Capa
 
     public function onPostPackageInstall(PackageEvent $packageEvent)
     {
-        print_r($packageEvent);
+        echo 'Package Installed: '.$packageEvent->getName().PHP_EOL;
 
         return $packageEvent;
     }
