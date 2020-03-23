@@ -10,7 +10,7 @@ class DeployCommand extends BaseCommand
 {
     protected function configure()
     {
-        $this->setName('ansistrano-deploy');
+        $this->setName('deploy');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

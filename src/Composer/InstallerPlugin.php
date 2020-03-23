@@ -8,15 +8,14 @@ use Composer\Installer\PackageEvent;
 use Composer\Installer\PackageEvents;
 use Composer\IO\IOInterface;
 use Composer\Plugin\Capable;
-use Composer\Plugin\PluginEvents;
 use Composer\Plugin\PluginInterface;
 
 class InstallerPlugin implements PluginInterface, EventSubscriberInterface, Capable
 {
     public function activate(Composer $composer, IOInterface $io)
     {
-//        $installer = new Installer($io, $composer);
-//        $composer->getInstallationManager()->addInstaller($installer);
+        $installer = new CustomInstaller($io, $composer);
+        $composer->getInstallationManager()->addInstaller($installer);
     }
 
     /**
@@ -40,8 +39,12 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface, Capa
 
     public function onPostPackageInstall(PackageEvent $packageEvent)
     {
-        echo $packageEvent->getInstalledRepo()->getPackages().PHP_EOL;
+        echo $packageEvent->getOperation().PHP_EOL;
+        echo 'Package Installed: '.$packageEvent->getName().PHP_EOL;
+//        $repositories = $packageEvent->getInstalledRepo()->getRepositories();
+//        print_r($packageEvent->getInstalledRepo()->getRepositories());
 
+        // if ansistrano
 //        echo 'Package Installed: '.$packageEvent->getName().PHP_EOL;
         // print_r($packageEvent->getInstalledRepo()->getRepositories());
 
